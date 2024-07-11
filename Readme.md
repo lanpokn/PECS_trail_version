@@ -1,6 +1,6 @@
 # Physical-based Event Camera Simulator
 
-This is the official implementation of Physical-based Event Camera Simulator（ **PECS**）.If you need more information, please refer to the paper with the same title.
+This is the official implementation of Physical-based Event Camera Simulator（ **PECS**）.This is a trial version used to validate the algorithm. Since we plan to replace PBRT in the future, this version has actually been deprecated, and PECS will be migrated to a better major platform. If you need more information, please refer to the paper with the same title.
 
 ![Image](.\output\backbone.jpg)
 
@@ -30,7 +30,7 @@ This code has been tested with Python 3.9.13 and blender 3.6. The usage instruct
 
 - run sensor module to get the final result. The sensor/src part is partly from ICNS because our algorithm is unrelated to the electronic circuitry except for the photoelectric effect.Thus, we use ICNS to achieve electronic circuitry simulation. In addtition, some functions need **metavision** to run because our camera is EVK4. If you don't want to use metavision, you can comment them out.
 
-- you can refer to sensor/src/example_EXR_to_events.py to get the example of how my paper's result is generated.
+- you can refer to sensor/src/example_EXR_to_events.py to get the example of how my paper's result is generated. please note that you need to generate photocurrent based on your own camera's quantum efficency. we have implemented it in film.cpp(line 937) to get an additional channel when rendering, and sensor/utils when using RGB video.
 
 ### (2) Use_Airsim
 
